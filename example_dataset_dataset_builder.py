@@ -12,6 +12,7 @@ class Builder(tfds.core.GeneratorBasedBuilder):
         '1.0.1': 'Initial release.',
     }
 
+    #lista de clases o tipos de imagenes
     classnames = ['El Chuntunqui', 'El Ch’uta Chuquisaqueño', 'El Huayño Chuquisaqueño', 'El Jula Jula', 'El Potolo', 'El Pujllay', 'El Sicuri', 'El Waca Waca', 'La Cueca Chuquisaqueña', 'La Moseñada']
 
     shape_image = (None, None, 3)
@@ -30,56 +31,24 @@ class Builder(tfds.core.GeneratorBasedBuilder):
             # as_supervised=True in builder.as_dataset.
             supervised_keys=('image', 'label'),  # Set to None to disable
             homepage='https://mi-dataset/',
-            description="""
-            Este dataset contiene imágenes de ropa típica de diversas danzas de Bolivia, ideal para entrenar modelos de clasificación de imágenes.
-            La versión 1.0.0 incluye imágenes clasificadas en las siguientes 26 categorías:
-            - cueca
-            - diablada
-            - morenada
-            - tinku
-            - caporales
-            - chacarera
-            - chamame
-            - cuarteto
-            - cumbia
-            - folklore
-            - malambo
-            - saya
-            - tango
-            - zamba
-            - zamba_cueca
-            - bachata
-            - bolero
-            - merengue
-            - salsa
-            - samba
-            - vallenato
-            - bambuco
-            - joropo
-            - pasillo
-            - porro
-            - tropical
-            - villancico
-
-            Cada clase contiene múltiples imágenes que muestran trajes tradicionales usados en las danzas correspondientes.
-            Las imágenes son de diversos tamaños pero tienen 3 canales de color (RGB).
-            """
         )
 
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
         # Download the data as specified in `_data_url` and write it to `downloaded_path`.
         #!path = dl_manager.download_and_extract('https://todo-data-url')
+
+        #ruta de los datos
         train_path = 'data'
 
         return {
             #!'train': self._generate_examples(path / 'train_imgs'),
+
+            #generar ejemplos tipos de datos (train, test, val)
             'train': self._generate_examples(train_path),
         }
 
     def _generate_examples(self, path):
-        """Yields examples."""
-
         for class_name in os.listdir(path):
             class_path = os.path.join(path, class_name)
 

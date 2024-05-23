@@ -1,7 +1,7 @@
-# TODA ESTA INFO LA SAQUE DE:
+# TODA ESTA INFO ESTA SACADA DE:
 
-https://www.tensorflow.org/datasets/cli?hl=es-419
-https://www.tensorflow.org/datasets/add_dataset?hl=es-419
+[https://www.tensorflow.org/datasets/cli?hl=es-419](https://www.tensorflow.org/datasets/add_dataset?hl=es-419)
+[https://www.tensorflow.org/datasets/add_dataset?hl=es-419](https://www.tensorflow.org/datasets/add_dataset?hl=es-419)
 
 # INSTALAR CLI DE TENSORFLOW DATASETS
 
@@ -19,7 +19,7 @@ https://www.tensorflow.org/datasets/add_dataset?hl=es-419
 # PARA CONSTRUIR SU DATASET
 
 ```bash
-!tfds build su_dataset.py
+!tfds build mi_dataset.py
 ```
 
 # AL CONSTRUIR SU DATASET, PUEDEN USARLO DE LA SIGUIENTE MANERA
@@ -28,5 +28,5 @@ https://www.tensorflow.org/datasets/add_dataset?hl=es-419
 import tensorflow_datasets as tfds
 
 # Cargar el dataset
-ds = tfds.load('su_dataset')
+ds = tfds.load('mi_dataset')
 ```
