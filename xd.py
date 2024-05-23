@@ -12,5 +12,3 @@ data_train = dataset['train']
 
 print(data_train)
 
-# print info from the first element data_train
-print(next(iter(data_train)))

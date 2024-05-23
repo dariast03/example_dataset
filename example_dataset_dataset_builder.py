@@ -7,13 +7,12 @@ import tensorflow_datasets as tfds
 class Builder(tfds.core.GeneratorBasedBuilder):
     """DatasetBuilder for my_dataset dataset."""
 
-    VERSION = tfds.core.Version('1.0.0')
+    VERSION = tfds.core.Version('1.0.1')
     RELEASE_NOTES = {
-        '1.0.0': 'Initial release.',
+        '1.0.1': 'Initial release.',
     }
 
-    classnames = ['cueca', 'diablada', 'morenada', 'tinku', 'caporales', 'chacarera', 'chamame', 'cuarteto', 'cumbia',
-                  'malambo', 'saya', 'tango', 'zamba', 'zamba_cueca', 'bachata', 'bolero', 'merengue', 'salsa', 'samba',  'vallenato']
+    classnames = ['El Chuntunqui', 'El Ch’uta Chuquisaqueño', 'El Huayño Chuquisaqueño', 'El Jula Jula', 'El Potolo', 'El Pujllay', 'El Sicuri', 'El Waca Waca', 'La Cueca Chuquisaqueña', 'La Moseñada']
 
     shape_image = (None, None, 3)
 
